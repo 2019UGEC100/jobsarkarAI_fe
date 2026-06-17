@@ -32,7 +32,7 @@ export const heroTiles: HeroTile[] = [
     title: "Railway ALP 2026",
     subtitle: "Profile Ready",
     badge: { label: "95% Match", tone: "primary" },
-    position: { top: "62px", left: "calc(50% - 112px)" },
+    position: { top: "108px", right: "21vw" },
   },
   {
     category: "Civil Services",
