@@ -19,7 +19,11 @@ export type HeroTile = {
   title: string;
   subtitle: string;
   badge: { label: string; tone: "primary" | "error" | "secondary" };
-  position: string;
+  position: {
+    top: string;
+    left?: string;
+    right?: string;
+  };
 };
 
 export const heroTiles: HeroTile[] = [
@@ -28,35 +32,35 @@ export const heroTiles: HeroTile[] = [
     title: "UPSC 2024",
     subtitle: "Application Open",
     badge: { label: "88% Match", tone: "primary" },
-    position: "top-[130px] left-[7vw]",
+    position: { top: "130px", left: "7vw" },
   },
   {
     category: "Banking",
     title: "SBI PO 2024",
     subtitle: "750 Vacancies",
     badge: { label: "2 days left", tone: "error" },
-    position: "top-[220px] right-[7vw]",
+    position: { top: "230px", right: "7vw" },
   },
   {
     category: "Central Govt",
     title: "SSC CGL Prelims",
     subtitle: "Check Results",
     badge: { label: "Tier-1 Qualified", tone: "secondary" },
-    position: "bottom-[95px] left-[10vw]",
+    position: { top: "620px", left: "10vw" },
   },
   {
     category: "Railways",
     title: "RRB Technician",
     subtitle: "Apply by Friday",
     badge: { label: "4 days left", tone: "error" },
-    position: "bottom-[130px] right-[11vw]",
+    position: { top: "590px", right: "10vw" },
   },
   {
     category: "Defence",
     title: "Agniveer 2026",
     subtitle: "Profile Match",
     badge: { label: "92% Match", tone: "primary" },
-    position: "top-[390px] left-[18vw]",
+    position: { top: "365px", left: "4vw" },
   },
 ];
 

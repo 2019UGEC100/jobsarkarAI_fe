@@ -1,3 +1,5 @@
+import type { CSSProperties } from "react";
+
 import { Icon } from "@/components/Icon";
 import { heroTiles, trustBadges } from "@/lib/landing-content";
 
@@ -11,11 +13,12 @@ export function Hero() {
   return (
     <section className="relative min-h-[860px] overflow-hidden pt-20 pb-32 bg-surface">
       {/* Floating notification tiles (desktop only) */}
-      <div className="absolute inset-0 z-0 pointer-events-none hidden lg:block">
+      <div className="absolute inset-0 z-0 pointer-events-none hidden xl:block">
         {heroTiles.map((tile) => (
           <div
             key={tile.title}
-            className={`hero-tile absolute ${tile.position} bg-white p-4 rounded-xl glass-card w-56 text-left`}
+            style={tile.position as CSSProperties}
+            className="hero-tile absolute bg-white p-4 rounded-xl glass-card w-56 text-left"
           >
             <div className="flex justify-between items-start mb-2">
               <span className="text-[10px] font-bold uppercase tracking-wider text-outline">
