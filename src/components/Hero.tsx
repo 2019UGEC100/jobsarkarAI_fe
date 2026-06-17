@@ -9,37 +9,37 @@ const badgeToneClasses: Record<string, string> = {
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pt-20 pb-32 bg-surface">
-      <div className="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
-        {/* Floating notification tiles (desktop only) */}
-        <div className="absolute top-0 left-0 w-full h-full pointer-events-none hidden lg:block">
-          {heroTiles.map((tile) => (
-            <div
-              key={tile.title}
-              className={`hero-tile absolute ${tile.position} bg-white p-4 rounded-xl glass-card w-56 text-left`}
-            >
-              <div className="flex justify-between items-start mb-2">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-outline">
-                  {tile.category}
-                </span>
-                <span
-                  className={`${badgeToneClasses[tile.badge.tone]} px-2 py-0.5 rounded-full text-[10px] font-bold`}
-                >
-                  {tile.badge.label}
-                </span>
-              </div>
-              <p className="font-headline-sm text-headline-sm text-on-surface mb-1">
-                {tile.title}
-              </p>
-              <p className="text-label-sm text-outline-variant font-label-sm">
-                {tile.subtitle}
-              </p>
+    <section className="relative min-h-[860px] overflow-hidden pt-20 pb-32 bg-surface">
+      {/* Floating notification tiles (desktop only) */}
+      <div className="absolute inset-0 z-0 pointer-events-none hidden lg:block">
+        {heroTiles.map((tile) => (
+          <div
+            key={tile.title}
+            className={`hero-tile absolute ${tile.position} bg-white p-4 rounded-xl glass-card w-56 text-left`}
+          >
+            <div className="flex justify-between items-start mb-2">
+              <span className="text-[10px] font-bold uppercase tracking-wider text-outline">
+                {tile.category}
+              </span>
+              <span
+                className={`${badgeToneClasses[tile.badge.tone]} px-2 py-0.5 rounded-full text-[10px] font-bold`}
+              >
+                {tile.badge.label}
+              </span>
             </div>
-          ))}
-        </div>
+            <p className="font-headline-sm text-headline-sm text-on-surface mb-1">
+              {tile.title}
+            </p>
+            <p className="text-label-sm text-outline-variant font-label-sm">
+              {tile.subtitle}
+            </p>
+          </div>
+        ))}
+      </div>
 
+      <div className="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
         {/* Headline + search */}
-        <div className="max-w-2xl mx-auto mb-12">
+        <div className="max-w-2xl mx-auto mb-12 pt-16">
           <h1 className="font-display-lg text-display-lg md:text-[64px] font-black tracking-tighter mb-6">
             Job sahi, <br />
             <span className="text-primary">Milegi yahi!</span>
