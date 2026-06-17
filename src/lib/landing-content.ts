@@ -8,10 +8,10 @@
 export type NavLink = { label: string; href: string; active?: boolean };
 
 export const navLinks: NavLink[] = [
-  { label: "Jobs", href: "#", active: true },
-  { label: "Eligibility", href: "#" },
-  { label: "Success Stories", href: "#" },
-  { label: "About", href: "#" },
+  { label: "Jobs", href: "/jobs", active: true },
+  { label: "Eligibility", href: "/eligibility" },
+  { label: "Success Stories", href: "/success-stories" },
+  { label: "About", href: "/about" },
 ];
 
 export type HeroTile = {
@@ -19,6 +19,7 @@ export type HeroTile = {
   title: string;
   subtitle: string;
   badge: { label: string; tone: "primary" | "error" | "secondary" };
+  href: string;
   position: {
     top: string;
     left?: string;
@@ -32,6 +33,7 @@ export const heroTiles: HeroTile[] = [
     title: "Railway ALP 2026",
     subtitle: "Profile Ready",
     badge: { label: "95% Match", tone: "primary" },
+    href: "/jobs/railway-alp-2026",
     position: { top: "108px", right: "21vw" },
   },
   {
@@ -39,6 +41,7 @@ export const heroTiles: HeroTile[] = [
     title: "UPSC 2024",
     subtitle: "Application Open",
     badge: { label: "88% Match", tone: "primary" },
+    href: "/jobs/upsc-2024",
     position: { top: "150px", left: "7vw" },
   },
   {
@@ -46,6 +49,7 @@ export const heroTiles: HeroTile[] = [
     title: "SBI PO 2024",
     subtitle: "750 Vacancies",
     badge: { label: "2 days left", tone: "error" },
+    href: "/jobs/sbi-po-2024",
     position: { top: "245px", right: "7vw" },
   },
   {
@@ -53,6 +57,7 @@ export const heroTiles: HeroTile[] = [
     title: "SSC CGL Prelims",
     subtitle: "Check Results",
     badge: { label: "Tier-1 Qualified", tone: "secondary" },
+    href: "/jobs/ssc-cgl-prelims",
     position: { top: "620px", left: "10vw" },
   },
   {
@@ -60,6 +65,7 @@ export const heroTiles: HeroTile[] = [
     title: "RRB Technician",
     subtitle: "Apply by Friday",
     badge: { label: "4 days left", tone: "error" },
+    href: "/jobs/rrb-technician",
     position: { top: "590px", right: "10vw" },
   },
   {
@@ -67,6 +73,7 @@ export const heroTiles: HeroTile[] = [
     title: "Agniveer 2026",
     subtitle: "Profile Match",
     badge: { label: "92% Match", tone: "primary" },
+    href: "/jobs/agniveer-2026",
     position: { top: "365px", left: "4vw" },
   },
 ];

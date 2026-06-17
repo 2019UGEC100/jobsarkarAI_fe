@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { navLinks } from "@/lib/landing-content";
 
 export function Navbar() {
@@ -5,15 +7,15 @@ export function Navbar() {
     <nav className="bg-surface/80 backdrop-blur-md sticky top-0 z-50 border-b border-outline-variant">
       <div className="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 w-full max-w-container-max mx-auto">
         <div className="flex items-center gap-stack-lg">
-          <a
+          <Link
             className="font-headline-md text-headline-md font-bold text-primary"
-            href="#"
+            href="/"
           >
             JobSarkar.ai
-          </a>
+          </Link>
           <div className="hidden md:flex items-center gap-stack-md ml-12">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.label}
                 href={link.href}
                 className={
@@ -23,17 +25,23 @@ export function Navbar() {
                 }
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </div>
         </div>
         <div className="flex items-center gap-stack-md">
-          <button className="px-6 py-2 rounded-lg border border-outline text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high/50 transition-all active:scale-95">
+          <Link
+            href="/login"
+            className="px-6 py-2 rounded-lg border border-outline text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high/50 transition-all active:scale-95"
+          >
             Log In
-          </button>
-          <button className="px-6 py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:opacity-90 transition-all active:scale-95">
+          </Link>
+          <Link
+            href="/signup"
+            className="px-6 py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:opacity-90 transition-all active:scale-95"
+          >
             Sign Up
-          </button>
+          </Link>
         </div>
       </div>
     </nav>

@@ -1,4 +1,5 @@
 import type { CSSProperties } from "react";
+import Link from "next/link";
 
 import { Icon } from "@/components/Icon";
 import { heroTiles, trustBadges } from "@/lib/landing-content";
@@ -13,17 +14,17 @@ export function Hero() {
   return (
     <section className="relative min-h-[860px] overflow-hidden pt-20 pb-32 bg-surface">
       {/* Floating notification tiles (desktop only) */}
-      <div className="absolute inset-0 z-0 pointer-events-none hidden xl:block">
+      <div className="absolute inset-0 z-20 pointer-events-none hidden xl:block">
         {heroTiles.map((tile) => (
           <div
             key={tile.title}
             style={tile.position as CSSProperties}
             className="hero-tile absolute w-56"
           >
-            <button
-              type="button"
+            <Link
+              href={tile.href}
               aria-label={`Explore ${tile.title}`}
-              className="glass-card pointer-events-auto w-full rounded-xl bg-white p-4 text-left shadow-[0_4px_20px_rgba(15,23,42,0.05)] transition-all duration-200 ease-out hover:-translate-y-1 hover:scale-[1.04] hover:border-primary/35 hover:bg-white hover:shadow-[0_18px_42px_rgba(15,23,42,0.14)] focus-visible:-translate-y-1 focus-visible:scale-[1.04] focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary/60"
+              className="group glass-card pointer-events-auto block w-full rounded-xl bg-white p-4 text-left shadow-[0_4px_20px_rgba(15,23,42,0.05)] ring-1 ring-transparent transition-all duration-200 ease-out hover:-translate-y-2 hover:scale-[1.08] hover:border-primary/50 hover:bg-white hover:ring-2 hover:ring-primary/30 hover:shadow-[0_22px_56px_rgba(15,23,42,0.18)] focus-visible:-translate-y-2 focus-visible:scale-[1.08] focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary/70"
             >
               <div className="flex justify-between items-start mb-2">
                 <span className="text-[10px] font-bold uppercase tracking-wider text-outline">
@@ -41,7 +42,10 @@ export function Hero() {
               <p className="text-label-sm text-outline-variant font-label-sm">
                 {tile.subtitle}
               </p>
-            </button>
+              <span className="mt-3 block max-h-0 overflow-hidden text-[11px] font-bold text-primary opacity-0 transition-all duration-200 group-hover:max-h-5 group-hover:opacity-100 group-focus-visible:max-h-5 group-focus-visible:opacity-100">
+                View details
+              </span>
+            </Link>
           </div>
         ))}
       </div>
@@ -68,9 +72,12 @@ export function Hero() {
                 type="text"
               />
             </div>
-            <button className="bg-primary text-on-primary px-8 py-3 rounded-xl font-label-md text-label-md font-bold hover:opacity-90 transition-all">
+            <Link
+              href="/jobs"
+              className="bg-primary text-on-primary px-8 py-3 rounded-xl font-label-md text-label-md font-bold hover:opacity-90 transition-all"
+            >
               Search Jobs
-            </button>
+            </Link>
           </div>
         </div>
 
