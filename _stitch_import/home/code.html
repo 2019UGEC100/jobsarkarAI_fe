@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>JobSarkar.ai | Career Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#dbe1ff",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "surface-bright": "#f7f9fb",
+                        "primary-container": "#2563eb",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed": "#00174b",
+                        "on-tertiary-fixed-variant": "#783200",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed": "#341100",
+                        "on-surface": "#191c1e",
+                        "secondary-container": "#6cf8bb",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-secondary-fixed": "#002113",
+                        "tertiary-fixed": "#ffdbca",
+                        "primary": "#004ac6",
+                        "on-primary-container": "#eeefff",
+                        "on-primary": "#ffffff",
+                        "background": "#f7f9fb",
+                        "outline": "#737686",
+                        "on-background": "#191c1e",
+                        "surface-dim": "#d8dadc",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-tertiary-container": "#ffece5",
+                        "inverse-surface": "#2d3133",
+                        "surface": "#f7f9fb",
+                        "surface-tint": "#0053db",
+                        "secondary": "#006c49",
+                        "tertiary-container": "#b54e00",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb690",
+                        "on-secondary-fixed-variant": "#005236",
+                        "inverse-primary": "#b4c5ff",
+                        "surface-container-high": "#e6e8ea",
+                        "secondary-fixed": "#6ffbbe",
+                        "tertiary": "#8e3c00",
+                        "surface-container-low": "#f2f4f6",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-variant": "#e0e3e5",
+                        "on-secondary-container": "#00714d",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#c3c6d7",
+                        "secondary-fixed-dim": "#4edea3",
+                        "on-surface-variant": "#434655",
+                        "on-error": "#ffffff",
+                        "surface-container": "#eceef0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "40px",
+                        "margin-mobile": "16px",
+                        "base": "8px",
+                        "stack-sm": "8px",
+                        "section-gap": "64px",
+                        "stack-lg": "32px",
+                        "stack-md": "16px",
+                        "container-max": "1200px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "data-md": ["Inter"],
+                        "display-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "data-md": ["16px", {"lineHeight": "24px", "fontWeight": "500"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #F8FAFC;
+            font-family: 'Inter', sans-serif;
+            color: #191c1e;
+        }
+        .card-shadow {
+            box-shadow: 0px 4px 20px rgba(15, 23, 42, 0.05);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="flex min-h-screen overflow-x-hidden">
+<!-- Sidebar Navigation -->
+<aside class="fixed left-0 top-0 bottom-0 flex flex-col p-4 w-64 bg-surface-container-lowest border-r border-outline-variant/30 hidden lg:flex z-40">
+<div class="mb-10 px-2">
+<h1 class="text-headline-md font-headline-md font-extrabold text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+                CareerOS
+            </h1>
+<p class="text-label-sm font-label-sm text-on-surface-variant opacity-60">AI-Powered Intelligence</p>
+</div>
+<nav class="flex-1 space-y-1"><a class="flex items-center gap-3 px-4 py-3 bg-primary-container text-on-primary-container rounded-xl font-bold transition-transform translate-x-1" href="#"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span><span class="font-label-md text-label-md">Home</span></a><a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl transition-all duration-300" href="#"><span class="material-symbols-outlined">work</span><span class="font-label-md text-label-md">Jobs</span></a><a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl transition-all duration-300" href="#"><span class="material-symbols-outlined">psychology</span><span class="font-label-md text-label-md">AI Guide</span></a><a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl transition-all duration-300" href="#"><span class="material-symbols-outlined">account_circle</span><span class="font-label-md text-label-md">Profile</span></a></nav>
+<div class="mt-auto space-y-4">
+<div class="p-4 bg-primary-fixed/30 rounded-2xl">
+<p class="text-label-sm font-bold text-primary mb-2">Upgrade to Pro</p>
+<p class="text-[10px] leading-tight text-on-surface-variant mb-3">Unlock AI Mock Interviews and priority job matching.</p>
+<button class="w-full py-2 bg-primary text-white text-label-sm font-bold rounded-lg hover:shadow-lg transition-all active:scale-95">Upgrade Now</button>
+</div>
+<div class="space-y-1">
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:bg-surface-container-high rounded-xl text-label-sm" href="#">
+<span class="material-symbols-outlined text-xl">settings</span>
+                    Settings
+                </a>
+<a class="flex items-center gap-3 px-4 py-2 text-error hover:bg-error-container/20 rounded-xl text-label-sm" href="#">
+<span class="material-symbols-outlined text-xl">logout</span>
+                    Logout
+                </a>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 lg:ml-64 w-full relative">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-30 glass-effect border-b border-outline-variant/30 px-gutter h-16 flex items-center justify-between">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-md hidden md:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant/60">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container border-none rounded-full text-label-md focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Search opportunities, skills, or mentors..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden sm:flex items-center gap-2 px-4 py-2 bg-primary-container/10 text-primary rounded-full hover:bg-primary-container/20 transition-all text-label-md font-bold">
+<span class="material-symbols-outlined text-xl">psychology</span>
+                    Get AI Advice
+                </button>
+<div class="flex items-center gap-3 pl-4 border-l border-outline-variant/30">
+<button class="relative p-2 text-on-surface-variant hover:bg-surface-variant/50 rounded-full transition-all">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<img alt="User Profile Avatar" class="w-8 h-8 rounded-full border-2 border-primary-container/20 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWQ1eCjtbo9RNvvx6fMzG3UtXCTCZuMOGCSc47M33Z7o0obnAUqmYmlstxx3qwnhHUfMQwkXNKdRCzyB2r1xBQmgsgDVaNAojqRUlviiwlWpeb2Qa-z5XjdzPPvlNxNtbn6Sup0SSdMVc0BqDnBuurd9XXkS2rw4Z4gU8qKCru5CFYQaYpEpB-QHj-1w3wgRerO4ZOUD70EZQgMELU9ICsaUMUxSO_HlmmcSrlgskDepUej5jJHiPBjhtKSO9yxBtQHwF57WtvMqE"/>
+</div>
+</div>
+</header>
+<!-- Dashboard Content -->
+<div class="max-w-container-max mx-auto p-gutter pb-32">
+<!-- Greeting & Hero -->
+<section class="mb-stack-lg flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h2 class="font-headline-lg text-headline-lg mb-1">Namaste, Rohan! 👋</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Your career trajectory is looking strong today. Ready to level up?</p>
+</div>
+<div class="flex gap-2">
+<div class="flex -space-x-3">
+<img alt="Avatar 1" class="w-10 h-10 rounded-full border-2 border-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGbcMe0_DB8hf9IK-LE5k_396YVgvu_jbDzN4wM_sSOV9CGWGSs5t1fjB1GySGSWXMabsLEFyTdBPnjgsejMA4vcVNghPfgBQMSTOXN4oBpXzrHHWKkVmZJy5ZXOKgm4PO_IFHWi173hRaJtIvra_GtoM4_D6YxYi8s3v7y_zjB7u-lOSoR5nRBfxTGX-2aMbLdmX7lol9cv6BWMJR7HdUYhVP-z6uY_YOfWKKaMF7pCJIQP3Xr1NhtihbdvpdbxK8s5YGdN9pRF0"/>
+<img alt="Avatar 2" class="w-10 h-10 rounded-full border-2 border-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2M-MEVW7GADYTTwYEzjDw7HMbRfAI55MnD-92jaA-KGOQ-kUcoiams-wmqZqeL6F8MVqrLGdRpXS9XG2sB0Wf80-yzlY3taSzFhyBpAkS_JanHACr5tyVBbo7YUgx36IwTOfoj9GkyWUUgedk4RHv3AAm3Xz9KQveMVch_XJ49YQQLn5bnGv5dwlpcAF3X-s3MiNqo7PhhmG2rTR_B8hUKaPVB0sTILSuhnk2uPsF_jm1-OPXQKr61csmdkKIeIo-fj5uJQ91zQY"/>
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed text-xs font-bold border-2 border-white">+12</div>
+</div>
+<p class="text-label-sm text-on-surface-variant self-center ml-2">Networking activity in your domain</p>
+</div>
+</section>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-gutter">
+<!-- AI Insight Banner -->
+<div class="col-span-12 lg:col-span-8 overflow-hidden rounded-3xl bg-primary-container text-on-primary-container p-8 relative flex flex-col justify-between min-h-[240px]">
+<div class="relative z-10">
+<span class="inline-flex items-center gap-1 px-3 py-1 bg-white/20 rounded-full text-label-sm mb-4">
+<span class="material-symbols-outlined text-sm">stars</span> AI Insights
+                        </span>
+<h3 class="font-headline-md text-headline-md mb-2 max-w-lg">Your Profile match for 'Senior UX Researcher' is at an all-time high of 87%.</h3>
+<p class="font-body-md opacity-80 max-w-md">Adding a Case Study about accessibility could boost you into the top 5% of candidates.</p>
+</div>
+<div class="flex items-center gap-6 relative z-10 mt-6">
+<div class="flex flex-col">
+<span class="text-3xl font-bold">842</span>
+<span class="text-[10px] uppercase tracking-wider opacity-60">Career Score</span>
+</div>
+<div class="h-12 w-px bg-white/20"></div>
+<div class="flex flex-col">
+<span class="text-3xl font-bold">+12%</span>
+<span class="text-[10px] uppercase tracking-wider opacity-60">Growth MoM</span>
+</div>
+<button class="ml-auto bg-white text-primary px-6 py-2 rounded-full font-bold text-label-md hover:scale-105 transition-transform active:opacity-80">Explore Gaps</button>
+</div>
+<!-- Decorative Background Element -->
+<div class="absolute right-0 top-0 w-1/3 h-full opacity-10 pointer-events-none">
+<span class="material-symbols-outlined text-[180px] absolute -right-10 -top-10 rotate-12">trending_up</span>
+</div>
+</div>
+<!-- Quick Tools Sidebar -->
+<div class="col-span-12 lg:col-span-4 space-y-gutter"><div class="bg-white p-6 rounded-3xl card-shadow border border-outline-variant/10"><h4 class="font-headline-sm text-headline-sm mb-6">Quick Actions</h4><div class="grid grid-cols-1 gap-3"><button class="flex items-center gap-4 p-4 bg-surface-container-low hover:bg-primary-fixed/20 rounded-2xl transition-all group w-full"><span class="material-symbols-outlined text-primary text-2xl">description</span><span class="text-label-md font-bold">Resume Scan</span></button><button class="flex items-center gap-4 p-4 bg-surface-container-low hover:bg-secondary-container/20 rounded-2xl transition-all group w-full"><span class="material-symbols-outlined text-secondary text-2xl">quiz</span><span class="text-label-md font-bold">Mock Tests</span></button><button class="flex items-center gap-4 p-4 bg-surface-container-low hover:bg-tertiary-fixed/40 rounded-2xl transition-all group w-full"><span class="material-symbols-outlined text-tertiary text-2xl">verified_user</span><span class="text-label-md font-bold">Document Audit</span></button></div></div></div>
+<!-- Recommended Jobs Section -->
+<div class="col-span-12 lg:col-span-8">
+<div class="flex items-center justify-between mb-6">
+<h4 class="font-headline-sm text-headline-sm">Recommended for You</h4>
+<a class="text-label-md text-primary font-bold hover:underline" href="#">View All</a>
+</div>
+<div class="space-y-4">
+<!-- Job Card 1 -->
+<div class="bg-white p-6 rounded-3xl card-shadow border border-outline-variant/10 flex flex-col md:flex-row gap-6 hover:translate-y-[-4px] transition-all duration-300">
+<div class="w-16 h-16 rounded-2xl bg-surface-container flex items-center justify-center shrink-0">
+<img alt="Google" class="w-10 h-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdzTdGrve5mCMKBU6b_2KWopM1gPFRdaUEkwnpJEJkDqnNLnqUfkHi52oG3n6sHsoGtq0HFQpYfdAIbBFFwZJKdoAzk_mA48q_h-bPtoRbXbeOKPh2e6DtFV2pv_6gOwPGgD-6cTKVdZomXrPQ5QZAQfR4VrC05V_jvTJlSenrKjYFwJmAHEnCsbnSo9BM3jBG8Rv3j8AfMb1EuL7EZvQvsEG7Wbvo_WJ72fQOW3JZSY9nDiUvyXiDqkShNnCZaXnKSVrFDsvUF7g"/>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between mb-1">
+<h5 class="text-body-lg font-bold">Senior Product Designer</h5>
+<span class="px-3 py-1 bg-secondary-container/20 text-secondary text-label-sm rounded-full font-bold">94% Match</span>
+</div>
+<p class="text-label-md text-on-surface-variant mb-4">Google • Bengaluru (Remote Friendly)</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-2 py-1 bg-surface-container text-on-surface-variant text-[11px] rounded">System Design</span>
+<span class="px-2 py-1 bg-surface-container text-on-surface-variant text-[11px] rounded">Figma</span>
+<span class="px-2 py-1 bg-surface-container text-on-surface-variant text-[11px] rounded">User Research</span>
+</div>
+<div class="flex items-center justify-between pt-4 border-t border-outline-variant/10">
+<span class="text-label-sm font-bold">₹28L - ₹35L PA</span>
+<button class="px-5 py-2 bg-primary text-white text-label-sm font-bold rounded-lg hover:shadow-lg active:scale-95 transition-all">Apply Now</button>
+</div>
+</div>
+</div>
+<!-- Job Card 2 -->
+<div class="bg-white p-6 rounded-3xl card-shadow border border-outline-variant/10 flex flex-col md:flex-row gap-6 hover:translate-y-[-4px] transition-all duration-300">
+<div class="w-16 h-16 rounded-2xl bg-surface-container flex items-center justify-center shrink-0">
+<img alt="Microsoft" class="w-10 h-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJOdxa4la-Ie2NeJNUz0iRuO_tr8GIuLnv4GIeo3dD7dxKTFN4Hc7-eKeVOD66LTNReEXkmE_NWxSuHAsvICEBFlCRMQYH2UHGj7wJQdsRTdM0tHQmjm7zyg9F_R2HOEKN3xThaqrb4kc1ooA0iGqHlpHLFoLEsvd1JUbNndbN7Pup5epQCurWM7FAOps2deTRbofTTOWFmolTbIDViKim46xI396GkYWP7uuTgeE6jjrbnNQTyGq5jISVYhqrnReUlYCBCLODvOM"/>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between mb-1">
+<h5 class="text-body-lg font-bold">UX Lead</h5>
+<span class="px-3 py-1 bg-primary-fixed/30 text-primary text-label-sm rounded-full font-bold">82% Match</span>
+</div>
+<p class="text-label-md text-on-surface-variant mb-4">Microsoft • Hyderabad</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-2 py-1 bg-surface-container text-on-surface-variant text-[11px] rounded">Leadership</span>
+<span class="px-2 py-1 bg-surface-container text-on-surface-variant text-[11px] rounded">Strategy</span>
+<span class="px-2 py-1 bg-surface-container text-on-surface-variant text-[11px] rounded">Mobile UX</span>
+</div>
+<div class="flex items-center justify-between pt-4 border-t border-outline-variant/10">
+<span class="text-label-sm font-bold">₹32L - ₹42L PA</span>
+<button class="px-5 py-2 border border-primary text-primary text-label-sm font-bold rounded-lg hover:bg-primary/5 active:scale-95 transition-all">View Details</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Widgets Column -->
+<div class="col-span-12 lg:col-span-4 space-y-gutter"><div class="bg-white p-6 rounded-3xl card-shadow border border-outline-variant/10"><h4 class="font-headline-sm text-headline-sm mb-6">AI Career Roadmap</h4><div class="space-y-6 relative before:absolute before:left-[19px] before:top-2 before:bottom-2 before:w-0.5 before:bg-outline-variant/30"><div class="flex gap-4 relative"><div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center shrink-0 z-10"><span class="material-symbols-outlined text-sm">event</span></div><div><p class="text-label-md font-bold">UX Certification Exam</p><p class="text-[11px] text-on-surface-variant">Oct 24 • Milestone 1</p></div></div><div class="flex gap-4 relative"><div class="w-10 h-10 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center shrink-0 z-10"><span class="material-symbols-outlined text-sm">work_history</span></div><div><p class="text-label-md font-bold">Portfolio Submission</p><p class="text-[11px] text-on-surface-variant">Nov 12 • Milestone 2</p></div></div></div></div><div class="bg-white p-6 rounded-3xl card-shadow border border-outline-variant/10"><h4 class="font-headline-sm text-headline-sm mb-4">Market Intelligence</h4><div class="p-4 bg-primary-container/5 rounded-2xl border border-primary-container/10"><div class="flex items-end gap-1 h-24 mb-4"><div class="flex-1 bg-primary/20 rounded-t h-[40%]"></div><div class="flex-1 bg-primary/40 rounded-t h-[60%]"></div><div class="flex-1 bg-primary/60 rounded-t h-[85%]"></div><div class="flex-1 bg-primary rounded-t h-[75%]"></div><div class="flex-1 bg-primary/30 rounded-t h-[50%]"></div></div><div class="flex justify-between items-center"><span class="text-label-sm font-bold">Salary Trend</span><span class="text-primary font-bold text-label-sm">+14% YoY</span></div><p class="text-[10px] text-on-surface-variant mt-1">Average for Senior UX roles in Bengaluru</p></div></div></div>
+</div>
+<footer class="mt-section-gap pt-12 border-t border-outline-variant/30">
+<div class="grid grid-cols-12 gap-gutter mb-12">
+<div class="col-span-12 lg:col-span-4">
+<div class="flex items-center gap-2 text-primary font-extrabold text-xl mb-4">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+        CareerOS
+      </div>
+<p class="text-body-md text-on-surface-variant mb-6 max-w-xs">
+        Empowering 10k+ students to land their dream careers with AI-driven insights and personalized roadmaps.
+      </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-primary-container/20 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined text-xl">share</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-primary-container/20 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined text-xl">public</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-primary-container/20 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined text-xl">groups</span>
+</a>
+</div>
+</div>
+<div class="col-span-6 lg:col-span-2">
+<h5 class="font-bold text-label-md mb-4 uppercase tracking-wider">Platform</h5>
+<ul class="space-y-3">
+<li><a class="text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Home</a></li>
+<li><a class="text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Jobs</a></li>
+<li><a class="text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">AI Guide</a></li>
+<li><a class="text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Profile</a></li>
+</ul>
+</div>
+<div class="col-span-6 lg:col-span-3">
+<h5 class="font-bold text-label-md mb-4 uppercase tracking-wider">Legal</h5>
+<ul class="space-y-3">
+<li><a class="text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+<li><a class="text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Cookie Policy</a></li>
+</ul>
+</div>
+<div class="col-span-12 lg:col-span-3">
+<h5 class="font-bold text-label-md mb-4 uppercase tracking-wider">Contact</h5>
+<ul class="space-y-3">
+<li class="flex items-center gap-2 text-label-md text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">help</span> Support
+        </li>
+<li class="flex items-center gap-2 text-label-md text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">mail</span> hello@jobsarkar.ai
+        </li>
+<li class="flex items-start gap-2 text-label-md text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">location_on</span> New Delhi, India
+        </li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-label-sm text-on-surface-variant/60">© 2024 JobSarkar.ai. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="text-label-sm text-on-surface-variant/60 hover:text-primary" href="#">Twitter</a>
+<a class="text-label-sm text-on-surface-variant/60 hover:text-primary" href="#">LinkedIn</a>
+<a class="text-label-sm text-on-surface-variant/60 hover:text-primary" href="#">Instagram</a>
+</div>
+</div>
+</footer></div>
+<!-- Floating Mobile Navigation -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 pb-safe px-4 bg-surface/90 backdrop-blur-md lg:hidden border-t border-outline-variant/20 shadow-lg">
+<a class="flex flex-col items-center justify-center text-primary bg-primary-container/40 rounded-2xl px-4 py-2 scale-95 transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-[10px] font-bold mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">search</span>
+<span class="text-[10px] mt-1">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">psychology</span>
+<span class="text-[10px] mt-1">Planner</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="text-[10px] mt-1">Profile</span>
+</a>
+</nav>
+<!-- Floating Action Button (FAB) - Home Context -->
+<button class="fixed bottom-24 right-6 lg:bottom-10 lg:right-10 w-14 h-14 bg-primary text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-40">
+<span class="material-symbols-outlined text-3xl">auto_fix_high</span>
+</button>
+</main>
+<script>
+        // Subtle micro-interaction: update greeting based on time of day
+        document.addEventListener('DOMContentLoaded', () => {
+            const greetingElement = document.querySelector('h2');
+            if (greetingElement) {
+                const hour = new Date().getHours();
+                let greet = "Namaste";
+                if (hour < 12) greet = "Shubh Prabhat";
+                else if (hour < 17) greet = "Namaste";
+                else greet = "Shubh Sandhya";
+                greetingElement.innerHTML = `${greet}, Rohan! 👋`;
+            }
+
+            // Hover lift animation on cards
+            const cards = document.querySelectorAll('.card-shadow');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.style.boxShadow = '0px 12px 32px rgba(15, 23, 42, 0.12)';
+                });
+                card.addEventListener('mouseleave', () => {
+                    card.style.boxShadow = '0px 4px 20px rgba(15, 23, 42, 0.05)';
+                });
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>User Profile | JobSarkar.ai</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fb;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 1);
+            box-shadow: 0px 4px 20px rgba(15, 23, 42, 0.05);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        .verified-badge {
+            background: rgba(16, 185, 129, 0.1);
+            color: #10B981;
+        }
+        .progress-glow {
+            box-shadow: 0 0 12px rgba(37, 99, 235, 0.3);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#0053db",
+                        "surface-dim": "#d8dadc",
+                        "on-secondary-fixed-variant": "#005236",
+                        "outline": "#737686",
+                        "background": "#f7f9fb",
+                        "surface-container": "#eceef0",
+                        "primary": "#004ac6",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "on-surface-variant": "#434655",
+                        "tertiary": "#8e3c00",
+                        "surface-bright": "#f7f9fb",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#e0e3e5",
+                        "tertiary-container": "#b54e00",
+                        "on-surface": "#191c1e",
+                        "on-primary-container": "#eeefff",
+                        "error": "#ba1a1a",
+                        "surface-container-low": "#f2f4f6",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-background": "#191c1e",
+                        "primary-fixed": "#dbe1ff",
+                        "on-secondary-container": "#00714d",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "surface-variant": "#e0e3e5",
+                        "tertiary-fixed-dim": "#ffb690",
+                        "secondary-container": "#6cf8bb",
+                        "secondary": "#006c49",
+                        "outline-variant": "#c3c6d7",
+                        "on-tertiary-container": "#ffece5",
+                        "on-primary-fixed": "#00174b",
+                        "inverse-primary": "#b4c5ff",
+                        "inverse-surface": "#2d3133",
+                        "surface": "#f7f9fb",
+                        "secondary-fixed-dim": "#4edea3",
+                        "secondary-fixed": "#6ffbbe",
+                        "primary-container": "#2563eb",
+                        "on-secondary-fixed": "#002113",
+                        "tertiary-fixed": "#ffdbca",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#783200",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#341100",
+                        "surface-container-high": "#e6e8ea",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#eff1f3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "margin-mobile": "16px",
+                        "stack-lg": "32px",
+                        "stack-sm": "8px",
+                        "gutter": "24px",
+                        "container-max": "1200px",
+                        "stack-md": "16px",
+                        "section-gap": "64px",
+                        "margin-desktop": "40px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "data-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-lg-mobile": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "data-md": ["16px", {"lineHeight": "24px", "fontWeight": "500"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface">
+<!-- Desktop Side Navigation Shell -->
+<aside class="fixed left-0 top-0 h-full z-40 hidden md:flex h-screen w-64 flex-shrink-0 flex flex-col bg-surface-container-lowest border-r border-outline-variant">
+<div class="px-6 py-8">
+<h1 class="text-headline-sm font-headline-sm font-bold text-primary">JobSarkar.ai</h1>
+<p class="text-label-md font-label-md text-on-surface-variant mt-1">Gov Job Intelligence</p>
+</div>
+<nav class="flex-grow">
+<!-- Nav Items -->
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg mx-2 my-1 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-label-md font-label-md">Home</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg mx-2 my-1 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="work">work</span>
+<span class="text-label-md font-label-md">Jobs</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg mx-2 my-1 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+<span class="text-label-md font-label-md">AI Guide</span>
+</a>
+<!-- ACTIVE STATE -->
+<a class="flex items-center gap-3 px-4 py-3 bg-primary-container text-on-primary-container rounded-lg mx-2 my-1 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="account_circle" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+<span class="text-label-md font-label-md">Profile</span>
+</a>
+</nav>
+<div class="p-4 border-t border-outline-variant">
+<div class="bg-primary-container/10 p-4 rounded-xl mb-4 text-center">
+<p class="text-label-sm text-primary font-bold">Upgrade to Pro</p>
+</div>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-label-md font-label-md">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="text-label-md font-label-md">Support</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="md:ml-64 min-h-screen pb-24 md:pb-12">
+<!-- Top App Bar (Desktop Only) -->
+<header class="hidden md:flex h-16 bg-surface-bright/80 backdrop-blur-md items-center justify-between px-margin-desktop sticky top-0 z-30">
+<div class="flex items-center gap-gutter">
+<span class="text-headline-sm font-headline-sm text-on-surface">My Profile</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-primary overflow-hidden">
+<img alt="User Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARV899fGVurHSmLe_iUmXawlHwTnilmDLnxDGXbCy87Huq_dRmT4VBn4QrJ0zuzwSmRUxknTGHysmue3e-hydB-1cUDlTIWYu9UVs5Ve_OP-_eZ8oLyMkJXzK3_l8cU-BzUnLoW2EF0EHrOV6dwHNcr709I7j51sh6oHdfjCO61vIDmBcpEvXfibF5YOjZhMJCALwJPlHBH0qg6U051kfMR3GvK0tqdCEH7RJjdT7JtvqnEZPluDVU0ZXFTjpL1OyGQqWG_UBhbCg"/>
+</div>
+</div>
+</header>
+<!-- Profile Content Container -->
+<div class="max-w-container-max mx-auto px-4 md:px-margin-desktop py-8 md:py-10 space-y-stack-lg">
+<!-- Profile Header Card -->
+<section class="glass-card rounded-xl p-8 flex flex-col md:flex-row items-center md:items-start gap-8">
+<div class="relative group">
+<div class="w-32 h-32 rounded-full ring-4 ring-primary-container/20 overflow-hidden">
+<img alt="Aaryan's Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyhceCNzr1_6gdtKoYnoGIfC2Nea5SRzaGOL1sH4jH5_BkoJasGzbuvNRzC8l75GtrW6yL494Kc8GzzqB5AYvFMznnoi6VJqaYNcHqppxwa-0cZh0EncX6NoNBUZf1BNbiGlv58WVJVP5R0KpRgaX3uV1sH1Uet9rYb7tArfap6IURsgNgSMYCUVxCi3cF8gzvz3lHoRDgxWlE_5dcNB1XTSVrkfz0W8AJj6agdiOvWSctLjJYiJxaUvxBqxwSTUtsj2wFLuM23AE"/>
+</div>
+<button class="absolute bottom-1 right-1 bg-primary text-white p-2 rounded-full shadow-lg hover:scale-105 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[18px]" data-icon="edit">edit</span>
+</button>
+</div>
+<div class="flex-grow space-y-4 text-center md:text-left">
+<div>
+<h2 class="text-headline-lg font-headline-lg text-on-surface">Aaryan Sharma</h2>
+<p class="text-body-md font-body-md text-on-surface-variant">Senior Aspirant | UPSC &amp; PSC Target</p>
+</div>
+<div class="space-y-2 max-w-md mx-auto md:mx-0">
+<div class="flex justify-between items-end">
+<span class="text-label-md font-label-md text-on-surface-variant">Profile Completion</span>
+<span class="text-label-md font-label-md text-primary font-bold">85%</span>
+</div>
+<div class="w-full h-2.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full progress-glow transition-all duration-1000 ease-out" style="width: 85%;"></div>
+</div>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Add <span class="text-tertiary font-bold">Previous Experience</span> to reach 100%</p>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="px-6 py-2.5 bg-primary text-white rounded-lg font-label-md hover:opacity-90 transition-opacity">Share Profile</button>
+<button class="px-6 py-2.5 border border-outline-variant text-on-surface font-label-md rounded-lg hover:bg-surface-container transition-colors">Edit Profile</button>
+</div>
+</section>
+<!-- Grid Layout: Profile Details -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter">
+<!-- Card 1: Personal Information -->
+<article class="glass-card rounded-xl p-stack-md space-y-6">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="person_outline">person_outline</span>
+<h3 class="text-headline-sm font-headline-sm">Personal Information</h3>
+</div>
+<button class="text-primary text-label-md font-bold">Edit</button>
+</div>
+<div class="grid grid-cols-2 gap-y-6">
+<div>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Category</p>
+<p class="text-body-md font-body-md font-medium">General (EWS)</p>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Residence</p>
+<p class="text-body-md font-body-md font-medium">New Delhi, India</p>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Age</p>
+<p class="text-body-md font-body-md font-medium">26 Years</p>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Gender</p>
+<p class="text-body-md font-body-md font-medium">Male</p>
+</div>
+</div>
+</article>
+<!-- Card 2: Educational Background -->
+<article class="glass-card rounded-xl p-stack-md space-y-6">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="school">school</span>
+<h3 class="text-headline-sm font-headline-sm">Educational Background</h3>
+</div>
+<button class="text-primary text-label-md font-bold">+ Add New</button>
+</div>
+<div class="space-y-4">
+<div class="flex items-start gap-4 p-4 rounded-xl border border-outline-variant/30 hover:bg-surface-container-low transition-colors group">
+<div class="bg-primary/5 p-3 rounded-lg text-primary">
+<span class="material-symbols-outlined" data-icon="workspace_premium">workspace_premium</span>
+</div>
+<div class="flex-grow">
+<div class="flex items-center gap-2">
+<p class="text-body-md font-bold">Master of Public Policy</p>
+<span class="verified-badge px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span> Verified
+                                    </span>
+</div>
+<p class="text-label-md text-on-surface-variant">Jawaharlal Nehru University (JNU)</p>
+<p class="text-label-sm text-on-surface-variant mt-1">2021 — 2023 | 7.8 CGPA</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-4 rounded-xl border border-outline-variant/30 hover:bg-surface-container-low transition-colors group">
+<div class="bg-primary/5 p-3 rounded-lg text-primary">
+<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+</div>
+<div class="flex-grow">
+<div class="flex items-center gap-2">
+<p class="text-body-md font-bold">B.A. (Hons) Political Science</p>
+<span class="verified-badge px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span> Verified
+                                    </span>
+</div>
+<p class="text-label-md text-on-surface-variant">Delhi University (Hindu College)</p>
+<p class="text-label-sm text-on-surface-variant mt-1">2018 — 2021 | 82%</p>
+</div>
+</div>
+</div>
+</article>
+<!-- Card 3: Document Vault -->
+<article class="glass-card rounded-xl p-stack-md space-y-6">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="folder_zip">folder_zip</span>
+<h3 class="text-headline-sm font-headline-sm">Document Vault</h3>
+</div>
+<button class="text-primary text-label-md font-bold">Manage</button>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="flex items-center justify-between p-3 border border-outline-variant/30 rounded-lg hover:border-primary transition-all cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="text-error">
+<span class="material-symbols-outlined" data-icon="picture_as_pdf">picture_as_pdf</span>
+</div>
+<div>
+<p class="text-label-md font-bold">National_ID.pdf</p>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-widest">Verified</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]" data-icon="visibility">visibility</span>
+</div>
+<div class="flex items-center justify-between p-3 border border-outline-variant/30 rounded-lg hover:border-primary transition-all cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="text-error">
+<span class="material-symbols-outlined" data-icon="picture_as_pdf">picture_as_pdf</span>
+</div>
+<div>
+<p class="text-label-md font-bold">Degree_Cert.pdf</p>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-widest">Verified</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]" data-icon="visibility">visibility</span>
+</div>
+<div class="flex items-center justify-between p-3 border border-outline-variant/30 rounded-lg hover:border-primary transition-all cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="text-error">
+<span class="material-symbols-outlined" data-icon="picture_as_pdf">picture_as_pdf</span>
+</div>
+<div>
+<p class="text-label-md font-bold">EWS_Cert.pdf</p>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-widest">Verified</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]" data-icon="visibility">visibility</span>
+</div>
+<div class="flex items-center justify-center p-3 border-2 border-dashed border-outline-variant/50 rounded-lg hover:border-primary transition-all cursor-pointer group">
+<div class="flex items-center gap-2 text-on-surface-variant group-hover:text-primary">
+<span class="material-symbols-outlined text-[20px]" data-icon="add_circle">add_circle</span>
+<p class="text-label-md font-bold">Upload New</p>
+</div>
+</div>
+</div>
+</article>
+<!-- Card 4: Preferences -->
+<article class="glass-card rounded-xl p-stack-md space-y-6">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="tune">tune</span>
+<h3 class="text-headline-sm font-headline-sm">Preferences</h3>
+</div>
+<button class="text-primary text-label-md font-bold">Edit</button>
+</div>
+<div class="space-y-5">
+<div>
+<p class="text-label-sm font-label-sm text-on-surface-variant mb-2">Target Job Types</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-container px-3 py-1 rounded-full text-label-md text-on-surface">Group A (Gazetted)</span>
+<span class="bg-surface-container px-3 py-1 rounded-full text-label-md text-on-surface">UPSC Civil Services</span>
+<span class="bg-surface-container px-3 py-1 rounded-full text-label-md text-on-surface">State PSC</span>
+</div>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-on-surface-variant mb-2">Preferred Locations</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-container px-3 py-1 rounded-full text-label-md text-on-surface">New Delhi</span>
+<span class="bg-surface-container px-3 py-1 rounded-full text-label-md text-on-surface">Chandigarh</span>
+</div>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-on-surface-variant mb-2">Salary Expectation</p>
+<p class="text-body-md font-bold">₹70,000 - ₹90,000 <span class="text-on-surface-variant font-normal">/ month (Level 10 Pay Matrix)</span></p>
+</div>
+</div>
+</article>
+</div>
+<!-- Bottom Section: Account Settings -->
+<section class="glass-card rounded-xl p-stack-md">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-primary" data-icon="security">security</span>
+<h3 class="text-headline-sm font-headline-sm">Account Settings</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="space-y-2">
+<label class="text-label-md font-label-md text-on-surface-variant">Email Address</label>
+<div class="flex items-center gap-2 p-3 bg-surface-container-low rounded-lg border border-outline-variant/30">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant" data-icon="mail">mail</span>
+<span class="text-body-md font-medium truncate">aaryan.sharma@example.com</span>
+</div>
+<button class="text-primary text-label-sm font-bold">Change Email</button>
+</div>
+<div class="space-y-2">
+<label class="text-label-md font-label-md text-on-surface-variant">Password</label>
+<div class="flex items-center gap-2 p-3 bg-surface-container-low rounded-lg border border-outline-variant/30">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant" data-icon="lock">lock</span>
+<span class="text-body-md font-medium">•••••••••••••••</span>
+</div>
+<button class="text-primary text-label-sm font-bold">Update Password</button>
+</div>
+<div class="space-y-2">
+<label class="text-label-md font-label-md text-on-surface-variant">Two-Factor Authentication</label>
+<div class="flex items-center justify-between p-3 bg-secondary-container/10 rounded-lg border border-secondary-container/30">
+<div class="flex items-center gap-2 text-secondary">
+<span class="material-symbols-outlined text-[20px]" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-label-md font-bold">Enabled</span>
+</div>
+<button class="text-on-surface-variant text-label-sm font-bold">Configure</button>
+</div>
+</div>
+</div>
+</section>
+</div>
+<footer class="bg-surface-container-low border-t border-outline-variant mt-section-gap">
+<div class="max-w-container-max mx-auto px-4 md:px-margin-desktop py-12">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-12">
+<!-- Brand & Testimonial -->
+<div class="space-y-4">
+<h4 class="text-headline-sm font-bold text-primary">JobSarkar.ai</h4>
+<p class="text-body-md text-on-surface-variant">Empowering aspirants with AI-driven intelligence for government job success.</p>
+<div class="flex items-center gap-2 bg-primary/5 p-3 rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="groups">groups</span>
+<span class="text-label-md font-bold text-on-surface">10k+ students already enrolled</span>
+</div>
+</div>
+<!-- Platform Links -->
+<div class="space-y-4">
+<h5 class="text-label-md font-bold uppercase tracking-wider text-on-surface">Platform</h5>
+<ul class="space-y-2">
+<li><a class="text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Home</a></li>
+<li><a class="text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Jobs</a></li>
+<li><a class="text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">AI Guide</a></li>
+<li><a class="text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Profile</a></li>
+</ul>
+</div>
+<!-- Legal Links -->
+<div class="space-y-4">
+<h5 class="text-label-md font-bold uppercase tracking-wider text-on-surface">Legal</h5>
+<ul class="space-y-2">
+<li><a class="text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+<li><a class="text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Cookie Policy</a></li>
+</ul>
+</div>
+<!-- Contact Info -->
+<div class="space-y-4">
+<h5 class="text-label-md font-bold uppercase tracking-wider text-on-surface">Contact</h5>
+<ul class="space-y-3">
+<li class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]" data-icon="help">help</span>
+<span class="text-body-md">Support Center</span>
+</li>
+<li class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]" data-icon="mail">mail</span>
+<span class="text-body-md">contact@jobsarkar.ai</span>
+</li>
+<li class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]" data-icon="location_on">location_on</span>
+<span class="text-body-md">New Delhi, India</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Bottom Bar -->
+<div class="pt-8 border-t border-outline-variant/30 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-label-md text-on-surface-variant">© 2024 JobSarkar.ai. All rights reserved.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="public">public</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="podcasts">podcasts</span>
+</a>
+</div>
+</div>
+</div>
+</footer></main>
+<!-- Mobile Bottom Navigation Shell -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 md:hidden bg-surface-container-lowest/95 backdrop-blur-lg h-20 rounded-t-xl shadow-lg">
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-label-sm font-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="work">work</span>
+<span class="text-label-sm font-label-sm">Jobs</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="bolt">bolt</span>
+<span class="text-label-sm font-label-sm">Insights</span>
+</a>
+<!-- ACTIVE STATE -->
+<a class="flex flex-col items-center justify-center text-primary font-bold scale-110 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="text-label-sm font-label-sm">Profile</span>
+</a>
+</nav>
+<script>
+        // Micro-interaction for hover effects on glass cards
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-2px)';
+                card.style.transition = 'transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0px)';
+            });
+        });
+
+        // Simulating loading of verification statuses
+        window.addEventListener('load', () => {
+            console.log('User Profile Page Loaded with verification tokens active.');
+        });
+    </script>
+</body></html>

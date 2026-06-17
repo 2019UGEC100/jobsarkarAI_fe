@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>JobSarkar.ai - Job sahi, Milegi yahi!</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-surface-variant": "#434655",
+                "primary": "#004ac6",
+                "on-tertiary-container": "#ffece5",
+                "error-container": "#ffdad6",
+                "on-tertiary-fixed-variant": "#783200",
+                "error": "#ba1a1a",
+                "on-primary-fixed-variant": "#003ea8",
+                "inverse-surface": "#2d3133",
+                "surface-tint": "#0053db",
+                "on-error": "#ffffff",
+                "on-background": "#191c1e",
+                "tertiary-fixed": "#ffdbca",
+                "secondary": "#006c49",
+                "on-surface": "#191c1e",
+                "background": "#f7f9fb",
+                "tertiary": "#8e3c00",
+                "surface-container-high": "#e6e8ea",
+                "surface-container-highest": "#e0e3e5",
+                "surface": "#f7f9fb",
+                "primary-fixed-dim": "#b4c5ff",
+                "outline-variant": "#c3c6d7",
+                "on-primary-fixed": "#00174b",
+                "on-error-container": "#93000a",
+                "surface-container-lowest": "#ffffff",
+                "surface-container": "#eceef0",
+                "primary-container": "#2563eb",
+                "secondary-container": "#6cf8bb",
+                "surface-container-low": "#f2f4f6",
+                "on-tertiary-fixed": "#341100",
+                "on-primary-container": "#eeefff",
+                "tertiary-fixed-dim": "#ffb690",
+                "tertiary-container": "#b54e00",
+                "on-secondary-container": "#00714d",
+                "outline": "#737686",
+                "inverse-on-surface": "#eff1f3",
+                "secondary-fixed-dim": "#4edea3",
+                "on-secondary": "#ffffff",
+                "secondary-fixed": "#6ffbbe",
+                "inverse-primary": "#b4c5ff",
+                "on-tertiary": "#ffffff",
+                "on-secondary-fixed-variant": "#005236",
+                "on-primary": "#ffffff",
+                "surface-bright": "#f7f9fb",
+                "surface-variant": "#e0e3e5",
+                "on-secondary-fixed": "#002113",
+                "primary-fixed": "#dbe1ff",
+                "surface-dim": "#d8dadc"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "base": "8px",
+                "section-gap": "64px",
+                "margin-desktop": "40px",
+                "stack-lg": "32px",
+                "stack-sm": "8px",
+                "gutter": "24px",
+                "container-max": "1200px",
+                "stack-md": "16px",
+                "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                "headline-md": ["Inter"],
+                "data-md": ["Inter"],
+                "body-md": ["Inter"],
+                "label-sm": ["Inter"],
+                "headline-lg": ["Inter"],
+                "headline-sm": ["Inter"],
+                "label-md": ["Inter"],
+                "display-lg": ["Inter"],
+                "headline-lg-mobile": ["Inter"],
+                "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                "data-md": ["16px", {"lineHeight": "24px", "fontWeight": "500"}],
+                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fb;
+        }
+        .hero-tile {
+            animation: float 6s ease-in-out infinite;
+            box-shadow: 0px 4px 20px rgba(15, 23, 42, 0.05);
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(1deg); }
+        }
+        .hero-tile:nth-child(2) { animation-delay: 1s; }
+        .hero-tile:nth-child(3) { animation-delay: 2s; }
+        .hero-tile:nth-child(4) { animation-delay: 3s; }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="text-on-surface">
+<!-- Top Navigation -->
+<nav class="bg-surface/80 backdrop-blur-md sticky top-0 z-50 border-b border-outline-variant">
+<div class="flex justify-between items-center px-margin-desktop h-20 w-full max-w-container-max mx-auto">
+<div class="flex items-center gap-stack-lg">
+<a class="font-headline-md text-headline-md font-bold text-primary" href="#">JobSarkar.ai</a>
+<div class="hidden md:flex items-center gap-stack-md ml-12">
+<a class="text-primary font-bold border-b-2 border-primary py-2 font-label-md text-label-md" href="#">Jobs</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors py-2 font-label-md text-label-md" href="#">Eligibility</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors py-2 font-label-md text-label-md" href="#">Success Stories</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors py-2 font-label-md text-label-md" href="#">About</a>
+</div>
+</div>
+<div class="flex items-center gap-stack-md">
+<button class="px-6 py-2 rounded-lg border border-outline text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high/50 transition-all active:scale-95">Log In</button>
+<button class="px-6 py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:opacity-90 transition-all active:scale-95">Sign Up</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative overflow-hidden pt-20 pb-32 bg-surface">
+<div class="absolute inset-0 z-0 pointer-events-none opacity-40">
+
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-margin-desktop text-center">
+<!-- Floating Elements Background -->
+<div class="absolute top-0 left-0 w-full h-full pointer-events-none hidden lg:block">
+<!-- UPSC Tile -->
+<div class="hero-tile absolute top-0 left-10 bg-white p-4 rounded-xl glass-card w-56 text-left">
+<div class="flex justify-between items-start mb-2">
+<span class="text-[10px] font-bold uppercase tracking-wider text-outline">Civil Services</span>
+<span class="bg-primary/10 text-primary px-2 py-0.5 rounded-full text-[10px] font-bold">88% Match</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-on-surface mb-1">UPSC 2024</p>
+<p class="text-label-sm text-outline-variant font-label-sm">Application Open</p>
+</div>
+<!-- SBI PO Tile -->
+<div class="hero-tile absolute top-20 right-10 bg-white p-4 rounded-xl glass-card w-56 text-left">
+<div class="flex justify-between items-start mb-2">
+<span class="text-[10px] font-bold uppercase tracking-wider text-outline">Banking</span>
+<span class="bg-error/10 text-error px-2 py-0.5 rounded-full text-[10px] font-bold">2 days left</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-on-surface mb-1">SBI PO 2024</p>
+<p class="text-label-sm text-outline-variant font-label-sm">750 Vacancies</p>
+</div>
+<!-- SSC Tile -->
+<div class="hero-tile absolute bottom-0 left-20 bg-white p-4 rounded-xl glass-card w-56 text-left">
+<div class="flex justify-between items-start mb-2">
+<span class="text-[10px] font-bold uppercase tracking-wider text-outline">Central Govt</span>
+<span class="bg-secondary/10 text-secondary px-2 py-0.5 rounded-full text-[10px] font-bold">Tier-1 Qualified</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-on-surface mb-1">SSC CGL Prelims</p>
+<p class="text-label-sm text-outline-variant font-label-sm">Check Results</p>
+</div>
+</div>
+<!-- Content Area -->
+<div class="max-w-2xl mx-auto mb-12">
+<h1 class="font-display-lg text-display-lg md:text-[64px] font-black tracking-tighter mb-6">
+                    Job sahi, <br/><span class="text-primary">Milegi yahi!</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12">
+                    India's first AI-powered platform for central and state government jobs. 
+                    Real-time updates, personalized eligibility, and simplified applications.
+                </p>
+<!-- Search Bar -->
+<div class="bg-white p-2 rounded-2xl shadow-xl flex flex-col md:flex-row gap-2 border border-outline-variant max-w-xl mx-auto">
+<div class="flex-1 flex items-center px-4 gap-3">
+<span class="material-symbols-outlined text-outline">search</span>
+<input class="w-full border-none focus:ring-0 font-body-md text-body-md bg-transparent h-12" placeholder="Search UPSC, Banking, SSC..." type="text"/>
+</div>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-xl font-label-md text-label-md font-bold hover:opacity-90 transition-all">Search Jobs</button>
+</div>
+</div>
+<!-- Trust Badge Section -->
+<div class="pt-24 border-t border-outline-variant/30">
+<p class="font-label-md text-label-md text-outline uppercase tracking-[0.2em] mb-12">Trusted by Candidates Nationwide</p>
+<div class="flex flex-wrap justify-center items-center gap-16 opacity-60 grayscale hover:grayscale-0 transition-all">
+<span class="font-black text-headline-md tracking-tighter">UPSC</span>
+<span class="font-black text-headline-md tracking-tighter">SBI</span>
+<span class="font-black text-headline-md tracking-tighter">RAILWAYS</span>
+<span class="font-black text-headline-md tracking-tighter">SSC</span>
+<span class="font-black text-headline-md tracking-tighter">DEFENCE</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Value Prop: Streamlined Success -->
+<section class="py-section-gap bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="text-center mb-20">
+<h2 class="font-headline-lg text-headline-lg mb-4">Streamlined Success</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Your journey from notification to appointment letter, simplified.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-stack-lg">
+<!-- Step 1 -->
+<div class="group p-stack-lg bg-white rounded-3xl border border-outline-variant transition-all hover:shadow-2xl hover:-translate-y-2">
+<div class="w-16 h-16 bg-primary/5 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary text-[32px] group-hover:text-white transition-colors" data-icon="person_add">person_add</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-4">Build Profile</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">Input your qualifications once. Our AI creates a master profile compatible with 5,000+ govt. portals.</p>
+</div>
+<!-- Step 2 -->
+<div class="group p-stack-lg bg-white rounded-3xl border border-outline-variant transition-all hover:shadow-2xl hover:-translate-y-2">
+<div class="w-16 h-16 bg-secondary/5 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-secondary transition-colors">
+<span class="material-symbols-outlined text-secondary text-[32px] group-hover:text-white transition-colors" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-4">Get Matched</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">Instant eligibility checks. We only show you jobs you can actually apply for, saving weeks of research.</p>
+</div>
+<!-- Step 3 -->
+<div class="group p-stack-lg bg-white rounded-3xl border border-outline-variant transition-all hover:shadow-2xl hover:-translate-y-2">
+<div class="w-16 h-16 bg-primary/5 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary text-[32px] group-hover:text-white transition-colors" data-icon="verified">verified</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-4">Apply with Confidence</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">One-click applications for supported departments. Never miss a deadline with automated SMS alerts.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- AI Engine Insights Section -->
+<section class="py-section-gap overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="bg-inverse-surface text-on-primary p-12 md:p-24 rounded-[48px] relative overflow-hidden flex flex-col md:flex-row items-center gap-20">
+<!-- Decoration -->
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
+
+</div>
+<div class="flex-1 relative z-10">
+<span class="bg-primary-fixed-dim text-on-primary-fixed font-label-md text-label-md px-4 py-2 rounded-full mb-8 inline-block">CANDIDATE INSIGHTS</span>
+<h2 class="font-display-lg text-display-lg text-white mb-8">AI-Powered Eligibility Analysis</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12">
+                        Stop reading complex PDF notifications. Our engine parses 5,000+ government notifications in real-time, matching your age, caste, education, and physical criteria instantly.
+                    </p>
+<div class="grid grid-cols-2 gap-8 mb-12">
+<div>
+<p class="text-[40px] font-bold text-white mb-2">5K+</p>
+<p class="text-label-md text-outline-variant">Live Notifications</p>
+</div>
+<div>
+<p class="text-[40px] font-bold text-white mb-2">0.2s</p>
+<p class="text-label-md text-outline-variant">Match Processing</p>
+</div>
+</div>
+<button class="bg-white text-inverse-surface px-10 py-4 rounded-xl font-bold hover:scale-105 transition-transform">Explore AI Match Score</button>
+</div>
+<div class="flex-1 relative z-10">
+<div class="bg-surface-container-lowest/10 backdrop-blur-md p-8 rounded-[32px] border border-white/10">
+<div class="flex items-center gap-4 mb-8">
+<div class="w-12 h-12 rounded-full bg-primary/20 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A portrait of a young Indian male professional smiling confidently in a modern, well-lit environment. The lighting is soft and high-key, reflecting a minimalist and professional light-mode aesthetic. The background is clean and slightly blurred to emphasize trust and professional success. Global colors of primary blue and white dominate the scene." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPVZ8w9ikO0eeBDPas84c_TC0qZdz5fIfq3zYoeyhPO79zYFf5ZlmAV4zMOaZP9wzc4zomb3OPzVBWV0oom4pxc5LPXjvhdX_mQI5EC4PM-7O7NZvBjYw-YywNxEsktE8ifNL9rpLqdb-dS4GPKteAVFUPIZIiaFmgGGM_HAi4DxzA8sdmUCBx8ECm4QcByEKElO38t-XEzGdM_cjJjNAcpUwo-XSu77COX-rk1mbiULRTIuhUGRyXwpjIq8fCGsuEl0IHiZKK1Mc"/>
+</div>
+<div>
+<p class="font-bold text-white">Rahul Sharma</p>
+<p class="text-label-sm text-outline-variant">Aspiring Civil Servant</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="bg-white/5 p-4 rounded-xl border border-white/5">
+<div class="flex justify-between items-center mb-2">
+<span class="text-label-sm">Age Criteria</span>
+<span class="text-secondary font-bold">Passed</span>
+</div>
+<div class="w-full bg-white/10 h-1 rounded-full overflow-hidden">
+<div class="bg-secondary h-full w-full"></div>
+</div>
+</div>
+<div class="bg-white/5 p-4 rounded-xl border border-white/5">
+<div class="flex justify-between items-center mb-2">
+<span class="text-label-sm">Education (Graduation)</span>
+<span class="text-secondary font-bold">Passed</span>
+</div>
+<div class="w-full bg-white/10 h-1 rounded-full overflow-hidden">
+<div class="bg-secondary h-full w-full"></div>
+</div>
+</div>
+<div class="bg-primary p-4 rounded-xl mt-6 text-center">
+<p class="font-bold">Overall Match: 98%</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust Signal / Success Stats -->
+<section class="py-section-gap bg-surface">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="bg-white p-12 md:p-20 rounded-[40px] shadow-sm border border-outline-variant flex flex-col md:flex-row items-center justify-between gap-12">
+<div class="max-w-md">
+<div class="flex gap-1 mb-6">
+<span class="material-symbols-outlined text-tertiary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-tertiary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-tertiary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-tertiary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-tertiary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg mb-4">10k+ Successful students already enrolled.</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Join the fastest growing community of government job aspirants in India.</p>
+</div>
+<div class="flex -space-x-4">
+<img class="w-20 h-20 rounded-full border-4 border-white object-cover" data-alt="A portrait of a diverse group of young professionals in India, showcasing joy and success after clearing their exams. The lighting is warm and natural, evoking a sense of communal achievement and trustworthiness. The image uses a high-key light-mode aesthetic with soft shadows and a professional color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXSjdcuqSGu4I2wFFYGTrB9RWlw84DJkWLEonQLcRmmhpqCbjFYNuHSq6VNcuQ03zZHyO71tlGGwScgbwSUvRHcmbOXmmqSd1RkAuJgyQbJ-ga9RbRjPcLzoErBD98t4A-rnzX0OM76V7C9e0BMxVSfuQBiqw3Yf1DAY5f1qrP6n2ve8ZVmFsmqs-jTCG9815WGI4_ZApDDjqeB-gJ06tP3DNN5EFB2M5O-uwYnxaFSW7dV_al7kXjYSOQhWHrAe8BKIJIm12e92o"/>
+<img class="w-20 h-20 rounded-full border-4 border-white object-cover" data-alt="A portrait of a confident young professional in a professional attire, looking directly at the camera. The style is clean and modern, following the high-end consumer app aesthetic. Soft, natural lighting highlights a mood of professional optimism and clarity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEK3wkzo_1as5Hn9wYB-rZuQxQxGMOT8QIFvCyiCXHnzngHc8ltFfCmZlmMFnIQyzXk1tU09Z6B7bqbuI66qk-VjzR0DBpM3-HnQ-rsSgwIv7b-pq-RY7sLCIbAKNsgOuJSBExeYE2OsS9IZtSPJQ-5G1AbCbsrywyx296TwcOTdBuI7RqwuLWSbPd6RUwIp9NgW5KOloLLt8gzs1BgnCjCr8Ly-DCaPEClXmB1ZudMlT_cB8E9rfAUPLrTdM4IjCfkV-sGOMt2rc"/>
+<img class="w-20 h-20 rounded-full border-4 border-white object-cover" data-alt="A close-up portrait of a female student smiling brilliantly, holding her certificate of achievement. The lighting is bright and cheerful, fitting a minimalist modern UI. The background is a clean office space, reflecting institutional trust." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxRhZXpjor1jygcEQ6EVBmxPfcrxIA49A-t67TAqey6IKSOr0BEbQe6XfF4szUejR_LnKGmHwCLgi58h5jD1fJJoED9lFDlZMd4jdIxbDOPt1nLlk3w4Of6NG74rXUM8siBDKk5CIUMDi7Bq-UjDyiC-rQJt6pASGz8n3gC7Dtpi8ZXKzhR_LSChIQhSPZZrtfOZj7iDhDwQjIPLHBCogGkItVPG4BKPmiuK9za76jZD4Y_rwga7su5vJs3L6aiOoglOPV6kjasss"/>
+<div class="w-20 h-20 rounded-full border-4 border-white bg-primary flex items-center justify-center text-white font-bold text-headline-sm">+10k</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-stack-lg py-section-gap px-margin-desktop max-w-container-max mx-auto">
+<div class="md:col-span-1">
+<a class="font-headline-sm text-headline-sm font-black text-primary mb-6 block" href="#">JobSarkar.ai</a>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                    © 2024 JobSarkar.ai. <br/>Job sahi, Milegi yahi! Trusted by 10k+ successful students.
+                </p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-outline cursor-pointer hover:text-primary transition-colors">public</span>
+<span class="material-symbols-outlined text-outline cursor-pointer hover:text-primary transition-colors">share</span>
+<span class="material-symbols-outlined text-outline cursor-pointer hover:text-primary transition-colors">mail</span>
+</div>
+</div>
+<div>
+<h4 class="font-label-md text-label-md font-bold mb-6 text-on-surface">For Candidates</h4>
+<ul class="space-y-4">
+<li><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-opacity" href="#">UPSC Jobs</a></li>
+<li><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-opacity" href="#">Banking Exams</a></li>
+<li><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-opacity" href="#">SSC CGL</a></li>
+<li><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-opacity" href="#">AI Score Help</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md font-bold mb-6 text-on-surface">Resources</h4>
+<ul class="space-y-4">
+<li><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-opacity" href="#">Exam Calendar</a></li>
+<li><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-opacity" href="#">Salary Calculator</a></li>
+<li><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-opacity" href="#">Previous Papers</a></li>
+<li><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-opacity" href="#">Blog</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md font-bold mb-6 text-on-surface">Legal</h4>
+<ul class="space-y-4">
+<li><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-opacity" href="#">Privacy Policy</a></li>
+<li><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-opacity" href="#">Terms of Service</a></li>
+<li><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-opacity" href="#">About Us</a></li>
+<li><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-opacity" href="#">Contact</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-desktop py-8 border-t border-outline-variant/30 text-center">
+<p class="font-label-sm text-label-sm text-outline">123 Gov-Connect Plaza, Sector 4, New Delhi - 110001</p>
+</div>
+</footer>
+</body></html>
