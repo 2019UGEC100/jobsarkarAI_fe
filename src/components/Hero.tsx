@@ -18,24 +18,30 @@ export function Hero() {
           <div
             key={tile.title}
             style={tile.position as CSSProperties}
-            className="hero-tile absolute bg-white p-4 rounded-xl glass-card w-56 text-left"
+            className="hero-tile absolute w-56"
           >
-            <div className="flex justify-between items-start mb-2">
-              <span className="text-[10px] font-bold uppercase tracking-wider text-outline">
-                {tile.category}
-              </span>
-              <span
-                className={`${badgeToneClasses[tile.badge.tone]} px-2 py-0.5 rounded-full text-[10px] font-bold`}
-              >
-                {tile.badge.label}
-              </span>
-            </div>
-            <p className="font-headline-sm text-headline-sm text-on-surface mb-1">
-              {tile.title}
-            </p>
-            <p className="text-label-sm text-outline-variant font-label-sm">
-              {tile.subtitle}
-            </p>
+            <button
+              type="button"
+              aria-label={`Explore ${tile.title}`}
+              className="glass-card pointer-events-auto w-full rounded-xl bg-white p-4 text-left shadow-[0_4px_20px_rgba(15,23,42,0.05)] transition-all duration-200 ease-out hover:-translate-y-1 hover:scale-[1.04] hover:border-primary/35 hover:bg-white hover:shadow-[0_18px_42px_rgba(15,23,42,0.14)] focus-visible:-translate-y-1 focus-visible:scale-[1.04] focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary/60"
+            >
+              <div className="flex justify-between items-start mb-2">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-outline">
+                  {tile.category}
+                </span>
+                <span
+                  className={`${badgeToneClasses[tile.badge.tone]} px-2 py-0.5 rounded-full text-[10px] font-bold`}
+                >
+                  {tile.badge.label}
+                </span>
+              </div>
+              <p className="font-headline-sm text-headline-sm text-on-surface mb-1">
+                {tile.title}
+              </p>
+              <p className="text-label-sm text-outline-variant font-label-sm">
+                {tile.subtitle}
+              </p>
+            </button>
           </div>
         ))}
       </div>

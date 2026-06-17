@@ -28,18 +28,25 @@ export type HeroTile = {
 
 export const heroTiles: HeroTile[] = [
   {
+    category: "AI Match",
+    title: "Railway ALP 2026",
+    subtitle: "Profile Ready",
+    badge: { label: "95% Match", tone: "primary" },
+    position: { top: "62px", left: "calc(50% - 112px)" },
+  },
+  {
     category: "Civil Services",
     title: "UPSC 2024",
     subtitle: "Application Open",
     badge: { label: "88% Match", tone: "primary" },
-    position: { top: "130px", left: "7vw" },
+    position: { top: "150px", left: "7vw" },
   },
   {
     category: "Banking",
     title: "SBI PO 2024",
     subtitle: "750 Vacancies",
     badge: { label: "2 days left", tone: "error" },
-    position: { top: "230px", right: "7vw" },
+    position: { top: "245px", right: "7vw" },
   },
   {
     category: "Central Govt",
